@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background: #9933cc;
+        }
+        p{ text-align: center;
+            color: aliceblue;
+            margin: 10px auto;
+        }
+        #wrap{
+            width: 100%;
+            height: 100%;
+            background: #9933cc;
+        }
+        .box{
+             margin:  0 auto;
+             overflow: hidden;
+             width: 500px;
+             display: flex;
+             justify-content: center;
+
+        }
+        .btn1{
+            width: 60px;
+            height: 30px;
+            background: white;
+            float: left;
+            margin: 50px 20px;
+            
+        }
+        .btn2{
+            float: left;
+            width: 60px;
+            height: 30px;
+            background: white;
+            margin: 50px 20px;
+        }
+        .alert{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 1);
+            opacity: 0.5;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+           
+        }
+        .alert-body{
+            position: relative;
+            width: 1000px;
+            height: 300px;
+            border:1px solid red;
+            margin: 10px auto;
+            margin-top: 200px;
+        }
+        .alert-title{
+            text-align: center;
+            color: white;
+            font-size: 50px;
+        }
+        .btnX{
+            position: fixed;
+            top: 0;
+            right: 0;
+            color: white;
+            cursor: pointer;
+        }
+        .alert-content{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p>There are two buttons there click the button and see what will appear</p>
+        <div class="box">
+        
+        <div class="btn1">button1</div>
+        <div class="btn2">button2</div>
+    </div>
+    <div class="alert">
+        <div class="alert-body">
+            <div class="alert-title">弹窗标题</div>
+            <div class="alert-content">弹窗内容</div>
+            <div class="btnX">X</div>
+        </div>
+    </div>
+    </div>
+    <script>
+   let btn1 = document.querySelector(".btn1")
+   let btn2 = document.querySelector(".btn2")
+   let alert = document.querySelector(".alert")
+   btn1.onclick =function(){
+   alert.style.display = "flex"
+   }
+   let btnX = document.querySelector(".btnX")
+   btnX.onclick =(e)=>{
+    if(e.target == alert)
+    alert.style.display = none;
+   }
+       </script>
+</body>
+</html>
